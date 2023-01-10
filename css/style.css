@@ -6,6 +6,9 @@ html{
 *, *::before, *::after{
     box-sizing: inherit;
 }
+body{
+    font-family: 'Lato', sans-serif;
+}
 ul{
     list-style: none;
     margin: 0;
@@ -31,6 +34,7 @@ a{
 }
 .header {
     background-color: #e8ebf1;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.07);
 }
 
 .header__inner {
@@ -44,7 +48,6 @@ a{
     color: #2aacc8;
     font-size: 50px;
     line-height: 27px;
-    font-family: 'Lato', sans-serif;
     font-weight: 400;
 
 }
@@ -75,6 +78,7 @@ a{
     position: relative;
 }
 .drop-down__list{
+    display: none;
     position: absolute;
     width: 200px;
     background-color: #fff;
@@ -85,12 +89,14 @@ a{
     padding: 10px 5px;
 }
 .drop-down__list a{
-    padding: 12px 11px;
+    padding: 12px 0 11px 11px;
     font-weight: 400;
     text-transform: none;
+    display: block;
 }
 .header__drop-down .drop-down__list li{
     margin-left: 0;
+    display: block;
 }
 .drop-down__list li + li a{
     border-top: 1px solid #e7e7e7;
@@ -104,7 +110,12 @@ a{
 .header__drop-down.drop-down{
     margin-left: 39px;
 }
-
+.header__drop-down.drop-down + .header__drop-down.drop-down{
+    margin-left: 12px;
+}
+.header__drop-down.drop-down + .header__link-blog{
+    margin-left: 20px;
+}
 
 /* знак > означає що правила будуть діяти лише на елемент "а" класа header__drop-down
 
@@ -115,7 +126,7 @@ a{
     border-top: 5px solid transparent;
     padding-left: 11px;
     padding-right: 26px;
-    transition: all 0.3s;
+    
 }
 .header__drop-down > a::after{
     content: '';
@@ -126,8 +137,49 @@ a{
     right: 9px;
     top: 17px;
 }
-.header__drop-down > a:hover{
+/* .header__drop-down > a:hover{
     color: #2aacc8;
     border-top: 5px solid #2aacc8;
     background-color: #fff;
+    transition: all 0.3s;
+} */
+/* .header__drop-down > a:hover + .drop-down__list{
+    display: block;  
+}
+.drop-down__list:hover{
+    display: block;
+} */
+.header__drop-down.drop-down:hover .drop-down__list{
+    display: block;
+}
+.header__drop-down.drop-down:hover > a{
+    color: #2aacc8;
+    border-top: 5px solid #2aacc8;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+.slider {
+background-color: #81e4ed;
+padding: 20px 0 40px;
+
+}
+/* .slider__inner {
+} */
+.slider__item {
+    background-image: url(../images/slider-bg.jpg);
+    min-height: 440px;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    
+}
+.slider__item-title {
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    width: 300px;
+    margin-left: 60px;
+    padding-top: 100px;
 }
